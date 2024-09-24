@@ -1,0 +1,5 @@
+neuron
+numpy
+matplotlib
+pandas
+ipykernel

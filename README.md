@@ -1,1 +1,4 @@
-# nx-450-computational-neuroscience-biophysics
+```
+conda create -n biophysics python=3.12
+pip install -r requirements.txt
+```
