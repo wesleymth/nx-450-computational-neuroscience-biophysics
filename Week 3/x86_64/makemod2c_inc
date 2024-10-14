@@ -1,0 +1,8 @@
+./Ca.c: ../Ca.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "Ca.mod" -o "/Users/wesleymonteith/code/nx-450-computational-neuroscience-biophysics/Week 3/x86_64")
+
+./Ca.o: ./Ca.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
