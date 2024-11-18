@@ -1,0 +1,16 @@
+./VecStim.c: ../VecStim.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "VecStim.mod" -o "/Users/wesleymonteith/code/nx-450-computational-neuroscience-biophysics/Tutorial_9-20241116/x86_64")
+
+./VecStim.o: ./VecStim.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
+./stdp_cc.c: ../stdp_cc.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "stdp_cc.mod" -o "/Users/wesleymonteith/code/nx-450-computational-neuroscience-biophysics/Tutorial_9-20241116/x86_64")
+
+./stdp_cc.o: ./stdp_cc.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
