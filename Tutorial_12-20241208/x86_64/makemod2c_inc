@@ -1,0 +1,8 @@
+./vecevent.c: ../vecevent.mod
+	@printf " -> $(C_GREEN)NMODL$(C_RESET) $<\\n"
+	(cd "..";  MODLUNIT=$(NRNUNITS) $(NOCMODL) "vecevent.mod" -o "/Users/wesleymonteith/code/nx-450-computational-neuroscience-biophysics/Tutorial_12-20241208/x86_64")
+
+./vecevent.o: ./vecevent.c
+	@printf " -> $(C_GREEN)Compiling$(C_RESET) $<\\n"
+	$(COMPILE) -I".." $(INCLUDES) -fPIC -c $< -o $@
+
